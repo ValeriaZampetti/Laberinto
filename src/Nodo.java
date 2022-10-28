@@ -7,6 +7,6 @@
  *
  * @author valeriazampetti
  */
-public class Vertice {
+public class Nodo {
     
 }
