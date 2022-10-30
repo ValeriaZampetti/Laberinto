@@ -22,7 +22,7 @@ public class Nodo {
         this.pLast = null;
     }
     
-     public Nodo( char info) {
+     public Nodo(char info) {
         this.pNext = null;
         this.pLast = null;
         this.info = info;

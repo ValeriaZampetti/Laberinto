@@ -15,15 +15,14 @@ import EstructurasDeDatos.Nodo;
 public class Lista {
     public Nodo pInicio;
     public Nodo pFinal;
-    public int size;
-    
+    public int size; 
     
     
     
     
     //Método para agregar primer elemento a la lista
     public void insertarPrimero(char info) {
-        Nodo nuevo = new Nodo();
+        Nodo nuevo = new Nodo(info);       
         nuevo.pNext = pInicio;
         pInicio = nuevo;
         size++;
@@ -96,13 +95,16 @@ public class Lista {
     
     public void printlista(){
         
-        for (int i=0; i<size; i++){
-            System.out.println("nodo");
+        Nodo aux = this.pInicio;
+
+        while (aux != null) {
+            System.out.println("nodo --> "+ aux.info + ", ");
+            aux = aux.pNext;
         }
+        
     }
     
-    
-            
+         
             
 
     

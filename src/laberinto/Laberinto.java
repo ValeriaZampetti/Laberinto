@@ -15,10 +15,19 @@ public class Laberinto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Grafo nodo1 = new Grafo(10,5);
-         nodo1.insertaArista(7, '5');
-         nodo1.insertaVertice(15);
-         nodo1.imprimirGrafo();
+         Grafo grafo = new Grafo(10);
+         //nodo1.insertaArista(7, '5');
+         grafo.insertaVertice(5);
+         grafo.insertaArista(0, 'a');
+         grafo.insertaArista(0, 'e');
+         grafo.insertaArista(0, 'i');
+         grafo.insertaArista(1, 'b');
+         grafo.insertaArista(2,'c');
+         grafo.insertaArista(3, 'd');
+         grafo.insertaArista(4, 'z');
+         grafo.insertaArista(4, 'y');
+         grafo.insertaArista(4, 'x');
+         grafo.imprimirGrafo();
          
     }
     
