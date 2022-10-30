@@ -12,7 +12,7 @@ import EstructurasDeDatos.Nodo;
  *
  * @author valeriazampetti
  */
-public class Lista {
+public class Lista<T> {
     public Nodo pInicio;
     public Nodo pFinal;
     public int size; 
@@ -21,7 +21,7 @@ public class Lista {
     
     
     //Método para agregar primer elemento a la lista
-    public void insertarPrimero(char info) {
+    public void insertarPrimero(T info) {
         Nodo nuevo = new Nodo(info);       
         nuevo.pNext = pInicio;
         pInicio = nuevo;
@@ -29,7 +29,7 @@ public class Lista {
     }
 
     //Método para insertar de ultimo
-    public void insertarUltimo(char info) {
+    public void insertarUltimo(T info) {
         Nodo nuevo = new Nodo(info);
         if (pInicio == null) {
             pInicio = nuevo;
@@ -41,6 +41,18 @@ public class Lista {
             temp.pNext = nuevo;
         }
         size++;
+    }
+    
+    public Nodo buscar(T info){
+        Nodo pAux = pInicio;
+        while (pAux.pNext != null) {            
+            if (pAux.info == info) {
+                return pAux;
+            }
+            pAux = pAux.pNext;
+        }
+        
+        return null;
     }
     
     //Método para eliminar el primer elemento

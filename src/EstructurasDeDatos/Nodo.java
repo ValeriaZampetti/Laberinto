@@ -9,26 +9,26 @@ package EstructurasDeDatos;
  *
  * @author valeriazampetti
  */
-public class Nodo {
+public class Nodo<T> {
 
    
 
     public Nodo pNext;
     public Nodo pLast;
-    public char info;
+    public T info;
     
     public Nodo() {
         this.pNext = null;
         this.pLast = null;
     }
     
-     public Nodo(char info) {
+     public Nodo(T info) {
         this.pNext = null;
         this.pLast = null;
         this.info = info;
     }
      
-    public char retornarinfo(){
+    public T retornarinfo(){
         return this.info;
     }
     

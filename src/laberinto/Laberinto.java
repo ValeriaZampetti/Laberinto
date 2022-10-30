@@ -18,15 +18,15 @@ public class Laberinto {
          Grafo grafo = new Grafo(10);
          //nodo1.insertaArista(7, '5');
          grafo.insertaVertice(5);
-         grafo.insertaArista(0, 'a');
-         grafo.insertaArista(0, 'e');
-         grafo.insertaArista(0, 'i');
-         grafo.insertaArista(1, 'b');
-         grafo.insertaArista(2,'c');
-         grafo.insertaArista(3, 'd');
-         grafo.insertaArista(4, 'z');
-         grafo.insertaArista(4, 'y');
-         grafo.insertaArista(4, 'x');
+         grafo.insertaArista(0, 1);
+         grafo.insertaArista(0, 2);
+         grafo.insertaArista(0, 3);
+         grafo.insertaArista(1, 4);
+         grafo.insertaArista(2, 5);
+         grafo.insertaArista(3, 6);
+         grafo.insertaArista(4, 7);
+         grafo.insertaArista(4, 8);
+         grafo.insertaArista(4, 9);
          grafo.imprimirGrafo();
          
     }
