@@ -33,26 +33,53 @@ public class Grafo {
             adyacencia[i].insertarPrimero(j);
         
         }
+       }
        
-//       public void eliminaArista (int i, int j) {
-//if (j >= numVertices)
-//System.out.println("Error, no existe el vértice en el grafo");
-//else {
-//listaAdy[i].eliminar (j);
-//if (!dirigido)
-//listaAdy[j].eliminar (i);
-//}
-//
-//public void insertaVertice (int n) {
-//if (n > maxNodos - numVertices)
-//System.out.println ("Error, se supera el número de nodos máximo del grafo");
-//else
-//for (int i = numVertices; i < numVertices + n; i++)
-//listaAdy[i]= new Lista();
-//numVertices += n;
-}
+        public void eliminaArista (int i, char j) {
+        if (j < cantvertices) {
+            adyacencia[i].borrarFirst();
+        } else System.out.println("Error, no existe el vértice en el grafo");
+        }
+
+        
+        
+        public void insertaVertice (int n) {
+        if (n > numnodos - cantvertices){
+            System.out.println ("Error, se supera el número de nodos máximo del grafo");
+        } else{
+           for (int i = cantvertices; i < cantvertices + n; i++){
+               adyacencia[i]= new Lista();
+               cantvertices += n;
+            }
+         }
+
+        }
+
+
+        public void imprimirGrafo () {
+        System.out.println("Tamaño máximo del grafo: " + numnodos + "\n");
+        System.out.println("El grafo contiene " + cantvertices + " vértices: \n");
+        for (int i = 0; i < cantvertices; i++) {
+        System.out.print ("vértice " + i + ": ");
+        escribir(adyacencia[i]);
+        }
+        }
+        
+        
+        static void escribir (Lista lista) {
+        Nodo aux;
+        aux = lista.pInicio;
+        while (aux != null) {
+        System.out.print (aux.info +", ");
+        aux = aux.pNext;
+        }
+        System.out.println ("FIN");
+        }
+        }
+
+        
        
-} 
+ 
 
     
    

@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package laberinto;
-
-/**
- *
- * @author valeriazampetti
- */
+import EstructurasDeDatos.Grafo;
+//
+// *
+// * @author valeriazampetti
+// */
 public class Laberinto {
 
     /**
@@ -15,6 +15,11 @@ public class Laberinto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         Grafo nodo1 = new Grafo(10,5);
+         nodo1.insertaArista(7, '5');
+         nodo1.insertaVertice(15);
+         nodo1.imprimirGrafo();
+         
     }
     
 }
