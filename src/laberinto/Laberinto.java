@@ -4,6 +4,7 @@
  */
 package laberinto;
 import EstructurasDeDatos.Grafo;
+import EstructurasDeDatos.Prim;
 import Interfaces.InterfazPrincipal;
 //
 // *
@@ -21,19 +22,9 @@ public class Laberinto {
       
         // TODO code application logic here
         
-         Grafo grafo = new Grafo(10);
-         //nodo1.insertaArista(7, '5');
-         grafo.insertaVertice(5);
-         grafo.insertaArista(0, 1);
-         grafo.insertaArista(0, 2);
-         grafo.insertaArista(0, 3);
-         grafo.insertaArista(1, 4);
-         grafo.insertaArista(2, 5);
-         grafo.insertaArista(3, 6);
-         grafo.insertaArista(4, 7);
-         grafo.insertaArista(4, 8);
-         grafo.insertaArista(4, 9);
-         grafo.imprimirGrafo();
+         Grafo grafo = Prim.genLaberinto(10, 10);
+           
+         var hola = "";
          
     }
     

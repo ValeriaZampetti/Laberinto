@@ -9,29 +9,28 @@ package EstructurasDeDatos;
  *
  * @author valeriazampetti
  */
-public class Nodo<T> {
-
-   
-
+public class Nodo {
     public Nodo pNext;
     public Nodo pLast;
-    public T info;
+    public int info;
     public int[] posicion;
     public boolean bloqueado;
+    public boolean inicio = false;
+    public boolean ultimo = false;
     
     public Nodo() {
         this.pNext = null;
         this.pLast = null;
     }
     
-     public Nodo(T info) {
+     public Nodo(int info) {
         this.pNext = null;
         this.pLast = null;
         this.info = info;
         this.bloqueado = true;
     }
      
-    public Nodo(int[] posicion, T info) {
+    public Nodo(int[] posicion, int info) {
         this.pNext = null;
         this.pLast = null;
         this.posicion = posicion;
