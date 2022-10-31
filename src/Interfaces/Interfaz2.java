@@ -4,12 +4,14 @@
  */
 package Interfaces;
 
+import EstructurasDeDatos.Grafo;
+
 /**
  *
  * @author valeriazampetti
  */
 public class Interfaz2 extends javax.swing.JFrame {
-
+    public Grafo laberinto;
     /**
      * Creates new form Interfaz2
      */

@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import EstructurasDeDatos.Prim;
+
 /**
  *
  * @author valeriazampetti
@@ -34,8 +36,8 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        input1ancho = new javax.swing.JTextField();
+        input2largo = new javax.swing.JTextField();
         BotonVentana = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,8 +56,14 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Largo:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 20));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, -1));
+
+        input1ancho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                input1anchoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(input1ancho, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, -1));
+        jPanel1.add(input2largo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, -1));
 
         BotonVentana.setText("Generar Laberinto");
         BotonVentana.addActionListener(new java.awt.event.ActionListener() {
@@ -71,8 +79,15 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentanaActionPerformed
-        ventana.show();   
+        ventana.laberinto = Prim.genLaberinto(Integer.parseInt(input1ancho.getText()),
+                Integer.parseInt(input1ancho.getText()));
+        ventana.show();
+        
     }//GEN-LAST:event_BotonVentanaActionPerformed
+
+    private void input1anchoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input1anchoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input1anchoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,12 +126,12 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonVentana;
+    private javax.swing.JTextField input1ancho;
+    private javax.swing.JTextField input2largo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
