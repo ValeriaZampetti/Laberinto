@@ -16,6 +16,8 @@ public class Nodo<T> {
     public Nodo pNext;
     public Nodo pLast;
     public T info;
+    public int[] posicion;
+    public boolean bloqueado;
     
     public Nodo() {
         this.pNext = null;
@@ -26,11 +28,17 @@ public class Nodo<T> {
         this.pNext = null;
         this.pLast = null;
         this.info = info;
+        this.bloqueado = true;
     }
      
-    public T retornarinfo(){
-        return this.info;
+    public Nodo(int[] posicion, T info) {
+        this.pNext = null;
+        this.pLast = null;
+        this.posicion = posicion;
+        this.info = info;
+        this.bloqueado = true;
     }
+    
     
     
 }

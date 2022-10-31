@@ -1,17 +1,18 @@
-package Interfaces;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package Interfaces;
 
 /**
  *
- * @author danieldangelo
+ * @author valeriazampetti
  */
 public class InterfazPrincipal extends javax.swing.JFrame {
-    InterfazLaberinto labGrafico;
 
+    Interfaz2 ventana= new Interfaz2();
+    
+    
     /**
      * Creates new form InterfazPrincipal
      */
@@ -33,64 +34,45 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        AnchoTxt = new javax.swing.JTextField();
-        LargoTxt = new javax.swing.JTextField();
-        GenerarLabBtn = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        BotonVentana = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Bienvenido al creador de laberintos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        jLabel1.setText("Bienvenido al creador de laberinto");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        jLabel2.setText("Ingrese los siguientes datos: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        jLabel2.setText("Ingrese los siguientes datos:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jLabel3.setText("Ancho:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 50, 20));
 
         jLabel4.setText("Largo:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 20));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, -1));
 
-        AnchoTxt.addActionListener(new java.awt.event.ActionListener() {
+        BotonVentana.setText("Generar Laberinto");
+        BotonVentana.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnchoTxtActionPerformed(evt);
+                BotonVentanaActionPerformed(evt);
             }
         });
-        jPanel1.add(AnchoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 80, -1));
-        jPanel1.add(LargoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 80, -1));
+        jPanel1.add(BotonVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
 
-        GenerarLabBtn.setText("Generar Laberinto");
-        GenerarLabBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GenerarLabBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(GenerarLabBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, -1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AnchoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnchoTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AnchoTxtActionPerformed
-
-    private void GenerarLabBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerarLabBtnActionPerformed
-        //Validación: Si los datos ingresados en AnchoTxt y LargoTxt no son numeros, imprimir "Ingrese solo numeros enteros", else: llama al constructor 
-        labGrafico.show();
-    }//GEN-LAST:event_GenerarLabBtnActionPerformed
+    private void BotonVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentanaActionPerformed
+        ventana.show();   
+    }//GEN-LAST:event_BotonVentanaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,19 +102,21 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new InterfazPrincipal().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InterfazPrincipal().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AnchoTxt;
-    private javax.swing.JButton GenerarLabBtn;
-    private javax.swing.JTextField LargoTxt;
+    private javax.swing.JButton BotonVentana;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,17 +4,23 @@
  */
 package laberinto;
 import EstructurasDeDatos.Grafo;
+import Interfaces.InterfazPrincipal;
 //
 // *
 // * @author valeriazampetti
 // */
 public class Laberinto {
+       private static final InterfazPrincipal window = new InterfazPrincipal();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+         window.setVisible(true);
+        
+      
         // TODO code application logic here
+        
          Grafo grafo = new Grafo(10);
          //nodo1.insertaArista(7, '5');
          grafo.insertaVertice(5);

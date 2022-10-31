@@ -55,6 +55,15 @@ public class Lista<T> {
         return null;
     }
     
+    public Nodo buscarCount(int posicion){
+        Nodo pAux = pInicio;
+        for (int i = 0; i < posicion; i++) {
+            pAux = pAux.pNext;
+        }
+        
+        return pAux;
+    }
+    
     //Método para eliminar el primer elemento
     public void borrarFirst() {
         if (pInicio != null) {

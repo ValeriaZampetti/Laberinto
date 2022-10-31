@@ -9,12 +9,12 @@ package EstructurasDeDatos;
  *
  * @author valeriazampetti
  */
-public class Grafo<T> {
+public class Grafo {
     
 
     public int numnodos;
     public int cantvertices;
-    public Lista<T> adyacencia[];
+    public Lista adyacencia[];
     
     public Grafo() {
         this.numnodos = 0;
@@ -25,6 +25,24 @@ public class Grafo<T> {
         this.numnodos = numnodos;
         this.cantvertices = 0;
         this.adyacencia = new Lista[numnodos];
+    }
+    
+    public Grafo(int heigth, int width){
+        this.numnodos = heigth * width;
+        this.cantvertices = 0;
+        this.adyacencia = new Lista[heigth];
+        
+        int[] posicion = new int[2];
+        for (int i = 0; i < heigth; i++) {
+            for (int j = 0; j < width; j++) {
+                posicion[0] = i;
+                posicion[1] = j;
+                
+                adyacencia[i].insertarUltimo(posicion);
+            }
+        }
+        
+        
     }
        
     public Nodo[] getVertices(){
@@ -46,7 +64,7 @@ public class Grafo<T> {
         return nodos;
     }
     
-    public void insertaArista (int i, T j) {
+    public void insertaArista (int i, Object j) {
         if (i >= cantvertices){
           System.out.println ("Error, no existe el vértice en el grafo");
           return;
@@ -62,7 +80,7 @@ public class Grafo<T> {
         } 
     }
    
-    public boolean existeArista(int i, T j){
+    public boolean existeArista(int i, Object j){
         if (i >= cantvertices){
           System.out.println ("Error, no existe el vértice en el grafo");
           return false;
@@ -112,8 +130,8 @@ public class Grafo<T> {
         //se examinan los vértices adyacentes a v para continuar el recorrido
         for (Integer i = 0; i < this.cantvertices; i++) {
             
-            if ((v != i) && (!visitados [i]) && (this.existeArista (v, (T) i)) )
-                recorrerProfundidad (i, visitados, info);
+            if ((v != i) && (!visitados [i]) && (this.existeArista (v, i)) )
+                recorrerProfundidad (i, visitados);
         }
         return null;
     }
@@ -135,36 +153,36 @@ public class Grafo<T> {
         return null;
     }
     
-    public static void amplitud (Grafo g) {
-        Cola cola = new Cola ();
-        boolean visitados [ ] = new boolean [g.cantvertices]; 
-        int v; //vértice actual
-
-        //Se inicializa el vector visitados [] a false for (int i = 0; i < g.obtenerNumVertices (); i++)
-        for (int i = 0; i < g.cantvertices; i++) {
-            visitados[i] = false;
-        }
-
-        for (int i = 0; i < g.cantvertices; i++) {
-            if (!visitados[i]) {
-                cola.Encolar(new Nodo(i));
-                visitados[i] = true;
-                
-                while (!cola.EsVacia()) {                    
-                    v = (int) cola.Desencolar().info;
-                    
-                    for (int j = 0; j < g.cantvertices; j++) {
-                        if ((v != j) && (g.existeArista(i, j)) && (!visitados[j])) {
-                            cola.Encolar(new Nodo(j));
-                            visitados[i] = true;
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    public static void amplitud (Grafo g) {
+//        Cola cola = new Cola ();
+//        boolean visitados [ ] = new boolean [g.cantvertices]; 
+//        int v; //vértice actual
+//
+//        //Se inicializa el vector visitados [] a false for (int i = 0; i < g.obtenerNumVertices (); i++)
+//        for (int i = 0; i < g.cantvertices; i++) {
+//            visitados[i] = false;
+//        }
+//
+//        for (int i = 0; i < g.cantvertices; i++) {
+//            if (!visitados[i]) {
+//                cola.Encolar(new Nodo(i));
+//                visitados[i] = true;
+//                
+//                while (!cola.EsVacia()) {                    
+//                    v = (int) cola.Desencolar().info;
+//                    
+//                    for (int j = 0; j < g.cantvertices; j++) {
+//                        if ((v != j) && (g.existeArista(i, j)) && (!visitados[j])) {
+//                            cola.Encolar(new Nodo(j));
+//                            visitados[i] = true;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
-    public Nodo buscar(T info){
+    public Nodo buscar(Object info){
         
         for (int i = 0; i < this.adyacencia.length; i++) {
             Nodo aux = this.adyacencia[i].pInicio;
